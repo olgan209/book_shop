@@ -32,7 +32,7 @@ public class UserService implements UserServiceInterface {
 
         Optional<User> user = userRepository.findById(id);
         if (user.isEmpty())
-            throw new NotFoundException("user not found with id:"+id+"!", HttpStatus.BAD_REQUEST);
+            throw new NotFoundException("user not found with id:" + id + "!", HttpStatus.BAD_REQUEST);
         return userMapper.toDto(user.get());
     }
 //2
