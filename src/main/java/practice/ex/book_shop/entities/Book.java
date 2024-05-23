@@ -17,7 +17,7 @@ public class Book {
     private String title;
     private String author;
     @Enumerated(EnumType.STRING)
-    private Type paperInBook;
+    private Type BookType;
 
     @ManyToOne
     Customer customer;
