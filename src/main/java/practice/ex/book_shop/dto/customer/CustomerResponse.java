@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CustomerResponse {
-    private int id;
+    private Integer id;
     private String firstname;
 }
