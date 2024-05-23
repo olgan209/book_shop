@@ -2,8 +2,8 @@ package practice.ex.book_shop.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import practice.ex.book_shop.user.User;
-import practice.ex.book_shop.user.UserRepository;
+import practice.ex.book_shop.entities.User;
+import practice.ex.book_shop.repositories.UserRepository;
 
 import java.util.List;
 import java.util.Optional;

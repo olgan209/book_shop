@@ -1,9 +1,10 @@
-package practice.ex.book_shop.user;
+package practice.ex.book_shop.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import practice.ex.book_shop.user.Role;
 
 import java.util.Collection;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
 @Data
 @Builder
 @Entity
-@Table(name="bs_Users")
+@Table(name="_Users")
 public class User implements UserDetails {
     @Id
     @GeneratedValue
