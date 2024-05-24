@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ExceptionResponse handlerNotFoundException(com.example.repair_station.exception.NotFoundException e) {
+    public ExceptionResponse handlerNotFoundException(practice.ex.book_shop.exception.NotFoundException e) {
         return new ExceptionResponse(
                 HttpStatus.NOT_FOUND,
                 e.getMessage());

@@ -19,6 +19,6 @@ public class Book {
     @Enumerated(EnumType.STRING)
     private Type BookType;
 
-    @ManyToOne
-    Customer customer;
+//    @ManyToOne
+//    private Customer customer;
 }

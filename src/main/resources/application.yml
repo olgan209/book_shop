@@ -1,13 +1,13 @@
 #spring.application.name=book_shop
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/users_bs
+    url: jdbc:postgresql://localhost:5432/bs_users
     username: postgres
     password: dataqwe665808
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
     show-sql: true
     properties:
       hibernate:

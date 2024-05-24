@@ -16,7 +16,7 @@ import java.util.List;
 @Data
 @Builder
 @Entity
-@Table(name="_Users")
+@Table(name="bs_users")
 public class User implements UserDetails {
     @Id
     @GeneratedValue
@@ -26,6 +26,13 @@ public class User implements UserDetails {
     private String email;
     private String password;
     private Integer age;
+
+//    @OneToOne(mappedBy = "user")
+//    private Customer customer;
+//
+//    @OneToOne(mappedBy = "customer")
+//    private User user;
+
 
     @Enumerated(EnumType.STRING)
     private Role role;

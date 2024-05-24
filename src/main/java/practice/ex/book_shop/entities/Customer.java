@@ -16,10 +16,10 @@ public class Customer {
     private Integer id;
     private String firstname;
 
-    @OneToMany
-    List<Book> books;
-
-    @OneToOne(mappedBy = "customer")
-    User user;
+//    @OneToMany(mappedBy = "customer")
+//    List<Book> books;
+//
+//    @OneToOne(mappedBy = "user")
+//    private User user;
 
 }
