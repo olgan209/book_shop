@@ -23,11 +23,6 @@ public class BookService implements BookServiceInterface {
     private final BookMapper bookMapper;
     private final AuthenticationService authenticationService;
 
-    public BookService(BookRepository bookRepository, BookMapper bookMapper, BookRepository bookRepository1, BookMapper bookMapper1, AuthenticationService authenticationService) {
-        this.bookRepository = bookRepository1;
-        this.bookMapper = bookMapper1;
-        this.authenticationService = authenticationService;
-    }
 
     @Override
     public void addBook(BookRequest bookRequest, String token) {
@@ -99,4 +94,5 @@ public class BookService implements BookServiceInterface {
         List<Book> books = bookRepository.findByTitle(title);
         return bookMapper.toDto(books);
     }
+
 }
