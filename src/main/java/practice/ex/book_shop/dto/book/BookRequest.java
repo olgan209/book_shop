@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BookRequest {
-    public Integer getId;
+    public Integer bookId;
     private String title;
     private String author;
 }

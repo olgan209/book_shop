@@ -1,6 +1,9 @@
 package practice.ex.book_shop.service;
 
 import lombok.RequiredArgsConstructor;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import net.minidev.json.parser.ParseException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,6 +15,8 @@ import practice.ex.book_shop.dto.register.RegisterRequest;
 import practice.ex.book_shop.entities.User;
 import practice.ex.book_shop.repositories.UserRepository;
 import practice.ex.book_shop.user.Role;
+
+import java.util.Base64;
 
 @Service
 @RequiredArgsConstructor
@@ -46,5 +51,20 @@ public class AuthenticationService {
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
+    }
+
+    public User getUsernameFromToken(String token){
+
+        String[] chunks = token.substring(7).split("\\.");
+        Base64.Decoder decoder = Base64.getUrlDecoder();
+
+        JSONParser jsonParser = new JSONParser();
+        JSONObject object = null;
+        try {
+            object = (JSONObject) jsonParser.parse(decoder.decode(chunks[1]));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        return _userRepository.findByEmail(String.valueOf(object.get("sub"))).orElseThrow(() -> new RuntimeException("user can be null"));
     }
 }

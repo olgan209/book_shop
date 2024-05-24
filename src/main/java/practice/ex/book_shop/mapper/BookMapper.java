@@ -12,7 +12,7 @@ public class BookMapper implements BookMap {
     @Override
     public BookResponse toDto(Book book) {
         BookResponse bookResponse = new BookResponse();
-        bookResponse.setId(book.getId());
+        bookResponse.setBookId(book.getBookId());
         bookResponse.setAuthor(book.getAuthor());
         bookResponse.setTitle(book.getTitle());
 

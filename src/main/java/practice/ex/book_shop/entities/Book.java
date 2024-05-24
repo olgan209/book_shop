@@ -13,7 +13,7 @@ public class Book {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private Integer bookId;
     private String title;
     private String author;
     @Enumerated(EnumType.STRING)
